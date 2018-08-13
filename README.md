@@ -2,9 +2,9 @@
 
 Example scripts to quickly spin up a load balanced WordPress application with a MariaDB Galera cluster.
 
-The next step on the list is to fill in the variables in your **terraform.tfvars** file. This example spins up 3 application nodes by default, but can be altered by placing the variable `node_count` in **terraform.tfvars** and assigning it a different value. If you haven't already created a self-signed TLS certificate you can do so by running `certifyme` script in the **bin** directory.
+The next step on the list is to fill in the variables in your **terraform.tfvars** file. This example spins up 3 application nodes by default, but can be altered by placing the variable `node_count` in **terraform.tfvars** and assigning it a different value.
 
-With that set you will run `terraform init` and follow up with `terraform apply` to get your Droplets and DigitalOcean Load Balancer with TLS certificate created.
+With that set you will run `terraform init` and follow up with `terraform apply` to get your Droplets and DigitalOcean Load Balancer created.
 
 Ansible also requires some variables be set so don't forget to fill in **group_vars/*/vault.yml** with the appropriate info. You can use `ansible-vault encrypt` on the file if you'd like. The variables that should be set are as follows:
 
