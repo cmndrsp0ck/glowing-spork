@@ -1,0 +1,24 @@
+---
+# Ansible playbook to call the roles required to deploy our WordPress cluster
+- hosts: all
+  gather_facts: yes
+  become: True
+
+- hosts: galera_loadbalancer
+  become: True
+  tasks:
+    - import_role:
+        name: ansible-galera-lb
+
+- hosts: galera_cluster_node
+  become: True
+  order: inventory
+  tasks:
+    - import_role:
+        name: ansible-galera-cluster-node
+
+- hosts: wp_node
+  become: True
+  tasks:
+    - import_role:
+        name: ansible-welp

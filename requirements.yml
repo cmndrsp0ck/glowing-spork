@@ -1,0 +1,3 @@
+---
+- src: https://github.com/cmndrsp0ck/ansible-welp.git
+  version: v1.0.0

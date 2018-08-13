@@ -1,0 +1,12 @@
+.DS_Store
+site.retry
+.tf_env
+*.retry
+*.tfstate.*
+*.tfstate
+*.tfvars
+*.pyc
+.terraform/
+roles
+backend.tf
+group_vars/
